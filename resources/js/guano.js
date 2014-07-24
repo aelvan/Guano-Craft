@@ -9,16 +9,18 @@ jQuery.extend( jQuery.easing, {
 $(function () {
   
   function guanoNow_ScrollEvent($grid, $sideColumn) {
-    
-    var scrollTop = $(window).scrollTop();
-    var targetY = 0;
-    
-    if (scrollTop > $grid.offset().top) {
-      targetY = scrollTop-$grid.offset().top;
+    if ($sideColumn.outerHeight()<$(window).height()-50) {
+      var scrollTop = $(window).scrollTop();
+      var targetY = 0;
+      
+      if (scrollTop > $grid.offset().top) {
+        targetY = scrollTop-$grid.offset().top;
+      }
+      
+      $sideColumn.animate({ marginTop: targetY }, 600, 'easeInOutGuano');
+    } else {
+      $sideColumn.css({ marginTop: 0 });
     }
-    
-    $sideColumn.animate({ marginTop: targetY }, 600, 'easeInOutGuano');
-    
   }
   
   function guanoNow_Init() {
