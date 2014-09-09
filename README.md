@@ -3,7 +3,7 @@ Guano for Craft
 
 Guano is a plugin for Craft that adds a few, small GUI improvements to the control panel. At the moment, these improvements are:
 
-- Adds a "Save and continue editing" button to the entry editing page.
+- Adds a "Save and continue editing" button to the entry editing page. The button returns to the same tab that was open when the user saved. 
 - Makes the right column in the entry editing page follow the top of the screen as the user scrolls down.
 
 This is an experimental plugin that rather haphazardly adds some css and javascript to the control panel. 
