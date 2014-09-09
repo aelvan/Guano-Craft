@@ -39,7 +39,15 @@ $(function () {
           
           $tbody.on('click', '.guano-submit', function (e) {
             e.preventDefault();
-            $form.append('<input type="hidden" name="redirect" value="' + $form.data('saveshortcut-redirect') + '">');
+						
+						var redirectUrl = $form.data('saveshortcut-redirect');
+						var selectedTab = $('.tabs .tab.sel');
+						
+						if (selectedTab.length>0) {
+							redirectUrl += selectedTab.attr('href');
+						}
+						
+            $form.append('<input type="hidden" name="redirect" value="' + redirectUrl + '">');
             $form.submit();
           });
         }
