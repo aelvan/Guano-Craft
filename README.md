@@ -6,6 +6,12 @@ Guano is a plugin for Craft that adds a few, small GUI improvements to the contr
 - Adds a "Save and continue editing" button to the entry editing page. The button returns to the same tab that was open when the user saved. 
 - Makes the right column in the entry editing page follow the top of the screen as the user scrolls down.
 
+Visual improvements:
+
+- Field headings/labels are made bold.
+- Fields have a larger vertical margin (36px instead of 24px).
+- Huds, except tool huds (clear cache, etc) have a minimum width of 400px. 
+
 This is an experimental plugin that rather haphazardly adds some css and javascript to the control panel. 
 Use at your own risk. Hopefully these things will make their way into Craft itself in due time.  
 

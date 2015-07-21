@@ -1,1 +1,7 @@
 .guano-submit { border-radius: 3px !important; margin-bottom: 10px; }
+
+/* CP improvements */
+.field { margin: 36px 0; }
+.field .heading { font-weight: 700; }
+.hud { min-width: 400px; }
+.hud.toolhud { min-width: 0; }
