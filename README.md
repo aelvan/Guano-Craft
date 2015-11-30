@@ -18,6 +18,9 @@ Use at your own risk. Hopefully these things will make their way into Craft itse
 
 Changelog
 ---
+### Version 0.2
+ - Updated to work with Craft 2.5.
+
 ### Version 0.1
  - Initial Public Release.
 

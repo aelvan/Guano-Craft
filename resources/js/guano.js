@@ -7,37 +7,39 @@ jQuery.extend( jQuery.easing, {
 
 
 $(function () {
-  
+
   function guanoNow_ScrollEvent($grid, $sideColumn) {
     if ($sideColumn.outerHeight()<$(window).height()-50) {
       var scrollTop = $(window).scrollTop();
       var targetY = 0;
       
       if (scrollTop > $grid.offset().top) {
-        targetY = scrollTop-$grid.offset().top;
+        targetY = scrollTop-$grid.offset().top+10;
       }
       
-      $sideColumn.animate({ marginTop: targetY }, 600, 'easeInOutGuano');
+      $sideColumn.animate({ marginTop: targetY }, 500, 'easeInOutGuano');
     } else {
       $sideColumn.css({ marginTop: 0 });
     }
   }
   
   function guanoNow_Init() {
-    var $form = $('#entry-form');
-  
-    if (($form.length>0) && ($form.find('.guano-submit').length==0)) {
+    var $form = $('#container');
+    var $entryIdInput = $('input[name="entryId"]');
+    
+    if (($entryIdInput.length>0) && ($form.length>0) && ($form.find('.guano-submit').length==0)) {
       
-      // add save and continue button
-      var $submitBtnGroup = $form.find('.inputs .btngroup.submit');
+      var $grid = $form.find('.grid');
+      var $mainColumn = $grid.find('.item[data-position="left"]');
+      var $sideColumn = $grid.find('.item[data-position="right"]');
+      var $btngroup = $form.find('.btngroup');
       
-      if ($submitBtnGroup.length>0) {
-        var $tbody = $submitBtnGroup.closest('tbody');
+      
+      if ($sideColumn.length>0 && $btngroup.length>0) {
         
-        if ($tbody.length>0) {
-          $tbody.prepend('<tr><td colspan="2"><input type="button" class="btn submit guano-submit" value="' + langStrSaveAndContinue + '" tabindex="0"></td></tr>');
+          $sideColumn.append('<div class="guano-button-wrapper"><input type="button" class="btn submit guano-save" value="' + langStrSave + '" tabindex="0"><input type="button" class="btn submit guano-save-continue" value="' + langStrSaveAndContinue + '" tabindex="0"></div>');
           
-          $tbody.on('click', '.guano-submit', function (e) {
+          $sideColumn.on('click', '.guano-save-continue', function (e) {
             e.preventDefault();
 						
 						var redirectUrl = $form.data('saveshortcut-redirect');
@@ -50,17 +52,17 @@ $(function () {
             $form.append('<input type="hidden" name="redirect" value="' + redirectUrl + '">');
             $form.submit();
           });
-        }
+        
+          $sideColumn.on('click', '.guano-save', function (e) {
+            e.preventDefault();
+            $form.submit();
+          });
       }
       
       // make sidebar fixed
-      var $grid = $form.find('.grid');
-      var $mainColumn = $grid.find('.item[data-position="left"]');
-      var $sideColumn = $grid.find('.item[data-position="right"]');
       var guanoNowTimeout = -1;
       
       $(window).scroll(function (e) {
-        
         clearTimeout(guanoNowTimeout);
         guanoNowTimeout = setTimeout(function () {
           if($mainColumn.css('width') != $grid.css('width')) {
@@ -68,7 +70,7 @@ $(function () {
           } else {
             $sideColumn.css({ marginTop: 0 });
           }
-        }, 200); 
+        }, 100); 
         
       });
     }
