@@ -1,3 +1,9 @@
 .guano-submit { border-radius: 3px !important; margin-bottom: 10px; }
 .guano-button-wrapper { text-align: right; margin-top: 20px; }
 .guano-save { margin-right: 5px; }
+
+
+/* CP improvements */
+.field { margin: 32px 0; }
+.field .heading { font-weight: 700; } 
+.field .matrixblock .heading { font-weight: 400; } 

@@ -27,7 +27,7 @@ $(function () {
     var $form = $('#container');
     var $entryIdInput = $('input[name="entryId"]');
     
-    if (($entryIdInput.length>0) && ($form.length>0) && ($form.find('.guano-submit').length==0)) {
+    if (($entryIdInput.length>0) && ($form.length>0) && ($form.find('.guano-save').length==0)) {
       
       var $grid = $form.find('.grid');
       var $mainColumn = $grid.find('.item[data-position="left"]');
