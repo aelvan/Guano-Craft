@@ -1,9 +1,22 @@
 .guano-submit { border-radius: 3px !important; margin-bottom: 10px; }
 .guano-button-wrapper { text-align: right; margin-top: 20px; }
 .guano-save { margin-right: 5px; }
+.guano-errorScale { -webkit-transition: -webkit-transform .3s ease; transition: transform .3s ease; }
+.guano-errorScaleUp { -webkit-transform: scale(1.2); -ms-transform: scale(1.2); transform: scale(1.2); }
+.guano-errorScaleDown { -webkit-transform: scale(0.8); -ms-transform: scale(0.8); transform: scale(0.8); }
 
 
 /* CP improvements */
-.field { margin: 32px 0; }
-.field .heading { font-weight: 700; } 
-.field .matrixblock .heading { font-weight: 400; } 
+.field { margin: 36px 0; }
+.field .heading label { font-weight: 700; }
+.field .matrixblock .heading { font-weight: 400; }
+
+#tabs .tab.error { background: #da5a47 !important; color: #fff !important; margin-left: 1px; margin-right: 1px;}
+#tabs .tab.sel.error { background: #E3988D !important;}
+#login-form {background-position: center top !important; }
+.lp-editor-container {overflow: hidden; }
+.lp-editor {padding-top: 80px; width: inherit; }
+.lp-editor header { position: fixed; left: 0; top: 0; width: inherit; margin: 0; z-index: 10; -webkit-transform: translateY(-100%); -ms-transform: translateY(-100%); transform: translateY(-100%); -webkit-transition: -webkit-transform .3s .5s ease; transition: transform .3s .5s ease; background-color: #f5f6f7;}
+.noscroll .lp-editor {position: relative; }
+.noscroll .lp-editor header {-webkit-transform: translateY(0); -ms-transform: translateY(0); transform: translateY(0); -webkit-transition-delay: 0; transition-delay: 0;}
+#types-Assets-restrict-allowed-types .field, #types-Assets-sources-field .checkbox-select div, div[id*="typesettings-restrict-allowed-types"] .field, div[id*="typesettings-sources-field"] .checkbox-select div { display: inline-block; margin: 0 20px 10px 0 !important; width: 150px; vertical-align: top; }
