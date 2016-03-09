@@ -17,7 +17,7 @@ $(function () {
         targetY = scrollTop-$grid.offset().top+10;
       }
 
-      $sideColumn.animate({ marginTop: targetY }, 500, 'easeInOutGuano');
+      $sideColumn.animate({ marginTop: targetY }, 300, 'easeInOutGuano');
     } else {
       $sideColumn.css({ marginTop: 0 });
     }
