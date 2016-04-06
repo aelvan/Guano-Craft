@@ -19,4 +19,5 @@
 .lp-editor header { position: fixed; left: 0; top: 0; width: inherit; margin: 0; z-index: 10; -webkit-transform: translateY(-100%); -ms-transform: translateY(-100%); transform: translateY(-100%); -webkit-transition: -webkit-transform .3s .5s ease; transition: transform .3s .5s ease; background-color: #f5f6f7;}
 .noscroll .lp-editor {position: relative; }
 .noscroll .lp-editor header {-webkit-transform: translateY(0); -ms-transform: translateY(0); transform: translateY(0); -webkit-transition-delay: 0; transition-delay: 0;}
+.noscroll .lp-editor .field:first-of-type { margin-top: 0 !important; }
 #types-Assets-restrict-allowed-types .field, #types-Assets-sources-field .checkbox-select div, div[id*="typesettings-restrict-allowed-types"] .field, div[id*="typesettings-sources-field"] .checkbox-select div { display: inline-block; margin: 0 20px 10px 0 !important; width: 150px; vertical-align: top; }
